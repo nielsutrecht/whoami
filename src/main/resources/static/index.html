@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Whoami</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body ng-controller="MainCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">Start up</div>
+                <div class="col-md-8">{{whoami.startup}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Time</div>
+                <div class="col-md-8">{{whoami.time}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Requests</div>
+                <div class="col-md-8">{{whoami.requests}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">My hostname</div>
+                <div class="col-md-8">{{whoami.hostname}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Your IP</div>
+                <div class="col-md-8">{{whoami.ip}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Headers</div>
+                <div class="col-md-8">
+                    <div class="row" ng-repeat="h in whoami.headers">
+                        <div class="col-md-4">{{h.key}}</div>
+                        <div class="col-md-8">{{h.value}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

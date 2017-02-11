@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  whoami:
+    image: "nielsutrecht/whoami:${TAG}"
+    networks:
+      - web
+    labels:
+      - "traefik.backend=whoami"
+      - "traefik.frontend.rule=Host: whoami.localhost, whoami.niels.nu"
+      - "traefik.port=80"
+
+networks:
+  web:
+    external:
+      name: traefik_webgateway
