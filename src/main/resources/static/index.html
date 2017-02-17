@@ -16,11 +16,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">Start up</div>
-                <div class="col-md-8">{{whoami.startup}}</div>
+                <div class="col-md-8">{{whoami.startup | date : 'yyyy-MM-dd HH:mm'}}</div>
             </div>
             <div class="row">
                 <div class="col-md-2">Time</div>
-                <div class="col-md-8">{{whoami.time}}</div>
+                <div class="col-md-8">{{whoami.time | date : 'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Uptime</div>
+                <div class="col-md-8">{{whoami.uptime}}</div>
             </div>
             <div class="row">
                 <div class="col-md-2">Requests</div>
@@ -42,6 +46,14 @@
                         <div class="col-md-8">{{h.value}}</div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Build version</div>
+                <div class="col-md-8">{{info.build.version}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Build time</div>
+                <div class="col-md-8">{{info.build.time | date : 'yyyy-MM-dd HH:mm'}}</div>
             </div>
         </div>
 
