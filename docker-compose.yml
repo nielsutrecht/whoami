@@ -3,6 +3,7 @@ version: '2'
 services:
   whoami:
     image: "nielsutrecht/whoami:${TAG}"
+    restart: always
     networks:
       - web
     labels:
